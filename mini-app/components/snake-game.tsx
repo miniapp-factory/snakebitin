@@ -75,7 +75,7 @@ export default function SnakeGame() {
   };
 
   const generateFood = (currentSnake: { x: number; y: number }[]) => {
-    let pos;
+    let pos: { x: number; y: number };
     do {
       pos = {
         x: Math.floor(Math.random() * GRID_SIZE),
@@ -85,6 +85,7 @@ export default function SnakeGame() {
     return pos;
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const interval = setInterval(move, 200);
     return () => clearInterval(interval);
